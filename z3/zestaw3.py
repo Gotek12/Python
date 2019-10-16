@@ -1,0 +1,179 @@
+#!/usr/bin/python3
+# -*- coding: iso-8859-2 -*-
+import sys
+
+# 3.1
+# a
+x = 2;
+y = 3;
+if (x > y):
+    result = x;
+else:
+    result = y;
+# taki kod zadzia³a ale wed³ug pep8 zamiast x > y nale¿y u¿ywaæ x>y
+# równie¿ dopuszcza nawiasy ale dla tak krótkiego warunku s± one niepotrzebne
+# ¶redników te¿ nie trzeba stosowaæ ale je¶li chcieliby¶my zrboiæ tak x = 2; y = 2 to nale¿y je stosowaæ aby kod by³ bardziej zrozumia³y
+
+# b
+# for i in "qwerty": if ord(i) < 100: print i
+# nie zadzia³a na python3 ze wzglêdu na print bez nawiasów
+# wiele bloków kodu w jednej linijce jest niezgodne z pep8
+# tak napisany kod powoduje, ¿e warunek if nie widzi zmiennej i
+# lepiej w przyk³adzie poni¿ej
+
+# c
+# for i in "axby": print ord(i) if ord(i) < 100 else i
+# dla pythona3 brak () w print a takto sk³adniowo mo¿na tak napisaæ funkcje ale jest mniej czytelna ni¿ rozbicie jej na wiele linii
+
+# 3.2
+# L = [3, 5, 4] ; L = L.sort()
+# bia³y znak przed ¶rednikiem jest b³êdem
+# funkcja sort() sortuje el wewn±trz a nie go zwraca wiêc zamiast L=L.sort() nale¿y zrobiæ L.sort()
+
+# x, y = 1, 2, 3
+# za du¿o liczb po prawej stronie '=' lub za ma³o kontenerów na zmienne po lewej
+
+# X = 1, 2, 3; X[1] = 4
+# x = 1,2,3 onstrukcja tworzy krotkê(tuple)  wiêc operacja x[1] jest niemo¿liwa bo krotki siê nie zmienia
+
+# X = [1, 2, 3] ; X[3] = 4
+# w tym przypadku wychodzimy poza zakres gdy¿ zaczynamy iterowaæ od 0, a nie od 1
+
+# X = "abc"; X.append("d")
+# string nie ma operacji append()
+
+# map(pow, range(8))
+# mapujemy na pow, który przyjmuje 2 argumenty
+# je¶³i chcemy korzystaæ z range nale¿y go przekonwertowaæ na listê list(range(8))
+# ale znów bêdzie problem gdy¿ bêdziemy mieli operacje int i lista
+
+# jak dobrze rozumiem x to zmienna typu int wiêc
+# 3.3
+print("\n3.3")
+for i in range(0, 31):
+    if i % 3 != 0:
+        print(i, end=' ')
+# wynik: 1 2 4 5 7 8 10 11 13 14 16 17 19 20 22 23 25 26 28 29
+
+# 3.4
+print("\n3.4")
+while 1:
+    try:
+        x = input("Wpisz liczbe: ")
+        if x == "stop":
+            break
+        x = float(x)
+    except ValueError as ex:
+        print("To nie jest liczba -> ", ex)
+        continue
+    print(float(x), pow(float(x), 3))
+# wynik np dla 6 -> 6.0 216.0
+# wynik np aaa -> To nie jest liczba
+
+# 3.5
+q = int(input("Podaj dl miarki (int)> "))
+miarka = ""
+kropki = "..."
+kreska = "|"
+for i in range(0, q):
+    miarka += (kreska + kropki)
+    if i == q - 1:
+        miarka += (kreska + "\n")
+
+for i in range(0, q + 1):
+    miarka += str(i)
+    if i >= 99:
+        miarka += " "
+    elif i >= 9:
+        miarka += "  "
+    else:
+        miarka += "   "
+print(miarka)
+
+# 3.6
+print("\n3.6")
+x = int(input("Podaj x "))
+y = int(input("Podaj y "))
+print("Generuje kratkownice ", x, "x", y)
+kratkownica = ""
+for i in range(0, x + 1):
+    for j in range(0, y):
+        kratkownica += "+---"
+        if j == y - 1:
+            kratkownica += "+"
+    kratkownica += "\n"
+    if i != x:
+        for k in range(0, y):
+            kratkownica += "|   "
+            if k == y - 1:
+                kratkownica += "|"
+        kratkownica += "\n"
+print(kratkownica)
+
+# 3.8
+print("\n3.8")
+s1 = ['a', 'b', 'c', 'd']
+s2 = ('b', 'd', 'e', 'f')
+wynik = []
+
+# znajdywanie tych samych el
+for i in s1:
+    if i in s2:
+        wynik.append(i)
+
+print("El wspólne dla 2 sekwencji", wynik)
+# 2 sposob
+print("El wspólne dla 2 sekwencji", list(set(s1) & set(s2)))
+# wynik: ['b', 'd']
+
+print("El wystêpuj±c w 2 sekwencjach ->", list(set(s1) | set(s2)))
+# wynik: ['b', 'a', 'd', 'e', 'c', 'f']
+
+# 3.9
+print("\n3.9")
+listaSek = [[], [4], (1, 2), [3, 4], (5, 6, 7)]
+newL = []
+for i in range(len(listaSek)):
+    newL.append(sum(listaSek[i]))
+print(newL)
+# wynik: [0, 4, 3, 7, 18]
+
+# 3.10
+print("\n3.10")
+
+
+def roman2int(roman):
+    # 1 sposób na s³ownik
+    slowniczek = {
+        "M": 1000,
+        "D": 500,
+        "C": 100,
+        "L": 50,
+        "X": 10,
+        "V": 5,
+        "I": 1
+    }
+    # 2 sposób
+    slowniczek2 = {}
+    slowniczek2["M"] = 1000
+    slowniczek2["D"] = 500
+    slowniczek2["C"] = 100
+    slowniczek2["L"] = 50
+    slowniczek2["X"] = 10
+    slowniczek2["V"] = 5
+    slowniczek2["I"] = 1
+
+    value = 0
+    for i in range(len(roman)):
+        if i > 0 and slowniczek[roman[i]] > slowniczek[roman[i - 1]]:
+            value += slowniczek[roman[i]] - 2 * slowniczek[roman[i - 1]]
+        else:
+            value += slowniczek[roman[i]]
+    return value
+
+print("Przyk³adowe liczby")
+print("MMMM -> ", roman2int('MMMM'))  # 4000
+print("III -> ", roman2int('III'))  # 3
+print("MD -> ", roman2int('MD'))  # 1500
+print("DCC -> ", roman2int('DCC'))  # 700
+print("XIV -> ", roman2int('XIV'))  # 14
