@@ -4,10 +4,12 @@
 import unittest
 from math import sqrt
 from times import Time as T
+import sys
 # korzystamy z python 2
+# ale równie¿ zadzia³a na python3
 # 6.1
 
-
+print('Ver of python -> ', sys.version_info[0])
 class TestTime(unittest.TestCase):
     def setUp(self):
         self.t123 = T(123)

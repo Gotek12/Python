@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-2 -*-
-
+import sys
 
 class Time:
     """Klasa reprezentuj±ca odcinek czasu."""
@@ -26,9 +26,33 @@ class Time:
         """Dodawanie odcinków czasu."""
         return Time(self.s + other.s)
 
-    def __cmp__(self, other):  # porównywanie, -1|0|+1
-        """Porównywanie odcinków czasu."""
-        return cmp(self.s, other.s)
+    # metody dla pythona2
+    if sys.version_info[0] < 3:
+        def __cmp__(self, other):  # porównywanie, -1|0|+1
+            """Porównywanie odcinków czasu."""
+            return cmp(self.s, other.s)
+    else:
+        # metody dla pythona3
+
+        def __eq__(self, other):  # ==
+            return self.s == other.s
+
+        def __ne__(self, other):  # !=
+            return self.s != other.s
+
+        def __lt__(self, other):  # <
+            return self.s < other.s
+
+        def __le__(self, other):  # <=
+            return self.s <= other.s
+
+        def __gt__(self, other):  # >
+            return self.s > other.s
+
+        def __ge__(self, other):  # >=
+            return self.s >= other.s
+
+
 
     def __int__(self):  # int(time1)
         """Konwersja odcinka czasu do int."""
