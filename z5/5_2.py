@@ -5,7 +5,6 @@
 from fracs import *
 import unittest
 
-
 class TestFractions(unittest.TestCase):
     def setUp(self):
         self.zero = [0, 1]

@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# -*- coding: iso-8859-2 -*
+
+
 def binarne_rek(L, left, right, y):
     """Wyszukiwanie binarne w wersji rekurencyjnej."""
 
@@ -11,6 +15,7 @@ def binarne_rek(L, left, right, y):
         else:
             return dive
     return -1  # brak takiej liczby w drzewie
+
 
 print("12.2")
 # test
