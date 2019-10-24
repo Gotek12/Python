@@ -10,31 +10,30 @@ if (x > y):
     result = x;
 else:
     result = y;
-# taki kod zadzia³a ale wed³ug pep8 zamiast x > y nale¿y u¿ywaæ x>y
-# równie¿ dopuszcza nawiasy ale dla tak krótkiego warunku s± one niepotrzebne
-# ¶redników te¿ nie trzeba stosowaæ ale je¶li chcieliby¶my zrboiæ tak x = 2; y = 2 to nale¿y je stosowaæ aby kod by³ bardziej zrozumia³y
+# taki kod zadzia³a, ale wed³ug pep8 nale¿y zastosowaæ inne podej¶cie
+# równie¿ dopuszcza nawiasy, ale dla tak krótkiego warunku s± one niepotrzebne
+# ¶redników te¿ nie trzeba stosowaæ, ale je¶li chcieliby¶my zrobiæ tak x = 2; y = 2 to nale¿y je stosowaæ, aby kod by³ bardziej zrozumia³y
 
 # b
 # for i in "qwerty": if ord(i) < 100: print i
 # nie zadzia³a na python3 ze wzglêdu na print bez nawiasów
 # wiele bloków kodu w jednej linijce jest niezgodne z pep8
 # tak napisany kod powoduje, ¿e warunek if nie widzi zmiennej i
-# lepiej w przyk³adzie poni¿ej
 
 # c
 # for i in "axby": print ord(i) if ord(i) < 100 else i
-# dla pythona3 brak () w print a takto sk³adniowo mo¿na tak napisaæ funkcje ale jest mniej czytelna ni¿ rozbicie jej na wiele linii
+# dla pythona3 brak () w print a, sk³adniowo mo¿na tak napisaæ funkcjê ale jest mniej czytelna ni¿ rozbicie jej na wiele linii
 
 # 3.2
 # L = [3, 5, 4] ; L = L.sort()
 # bia³y znak przed ¶rednikiem jest b³êdem
-# funkcja sort() sortuje el wewn±trz a nie go zwraca wiêc zamiast L=L.sort() nale¿y zrobiæ L.sort()
+# funkcja sort() sortuje el wewn±trz, a nie go zwraca wiêc zamiast L=L.sort() nale¿y zrobiæ L.sort()
 
 # x, y = 1, 2, 3
 # za du¿o liczb po prawej stronie '=' lub za ma³o kontenerów na zmienne po lewej
 
 # X = 1, 2, 3; X[1] = 4
-# x = 1,2,3 onstrukcja tworzy krotkê(tuple)  wiêc operacja x[1] jest niemo¿liwa bo krotki siê nie zmienia
+# x = 1,2,3 konstrukcja tworzy krotkê(tuple) wiêc operacja x[1] jest niemo¿liwa bo krotki siê nie zmienia
 
 # X = [1, 2, 3] ; X[3] = 4
 # w tym przypadku wychodzimy poza zakres gdy¿ zaczynamy iterowaæ od 0, a nie od 1
@@ -44,10 +43,9 @@ else:
 
 # map(pow, range(8))
 # mapujemy na pow, który przyjmuje 2 argumenty
-# je¶³i chcemy korzystaæ z range nale¿y go przekonwertowaæ na listê list(range(8))
-# ale znów bêdzie problem gdy¿ bêdziemy mieli operacje int i lista
+# je¶li chcemy korzystaæ z range nale¿y go przekonwertowaæ na listê list(range(8))
+# ale znów bêdzie problem, gdy¿ bêdziemy mieli operacje int i lista
 
-# jak dobrze rozumiem x to zmienna typu int wiêc
 # 3.3
 print("\n3.3")
 for i in range(0, 31):
@@ -153,7 +151,7 @@ def roman2int(roman):
         "V": 5,
         "I": 1
     }
-    # 2 sposób
+    # 2 sposób na s³ownik
     slowniczek2 = {}
     slowniczek2["M"] = 1000
     slowniczek2["D"] = 500
