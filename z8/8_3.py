@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: iso-8859-2 -*-
-
+import time
 import random as ran
 import math
-
+from numba import njit, prange
+import numpy as np
 
 def calc_pi(n=100):
     """Obliczanie liczby pi metod± Monte Carlo.
@@ -21,4 +22,13 @@ def calc_pi(n=100):
 
 print("8.3")
 print("Math.pi() -> ", math.pi)
-calc_pi(10000)
+
+# calc_pi(10000)
+# calc_pi(10)
+
+start_time = time.time()
+calc_pi(999999)
+stop_time = time.time() - start_time
+print(stop_time, "s")
+
+# calc_pi(9999999)
