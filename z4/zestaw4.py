@@ -101,7 +101,6 @@ def odwracanieR(L2, l, r):
     L2[l], L2[r] = L2[r], L2[l]
     odwracanieR(L2, l+1, r-1)
 
-
 odwracanieR(L2, l, r)
 print(L2)
 # wynik: [1, 5, 4, 3, 2, 6, 7, 8, 9, 10]

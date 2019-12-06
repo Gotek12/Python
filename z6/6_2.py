@@ -33,19 +33,19 @@ class TestPoint(unittest.TestCase):
         self.assertTrue(self.p1 != self.p2)
 
     def test_add(self):
-        self.assertEqual(self.p1 + self.p1, "(2, 4)")
-        self.assertEqual(self.p2 + self.p1, "(3, 5)")
-        self.assertEqual(self.p3 + self.p4, "(-12, 3)")
+        self.assertEqual(str(self.p1 + self.p1), "(2, 4)")
+        self.assertEqual(str(self.p2 + self.p1), "(3, 5)")
+        self.assertEqual(str(self.p3 + self.p4), "(-12, 3)")
 
     def test_sub(self):
-        self.assertEqual(self.p1 - self.p1, "(0, 0)")
-        self.assertEqual(self.p2 - self.p1, "(1, 1)")
-        self.assertEqual(self.p3 - self.p4, "(12, -3)")
+        self.assertEqual(str(self.p1 - self.p1), "(0, 0)")
+        self.assertEqual(str(self.p2 - self.p1), "(1, 1)")
+        self.assertEqual(str(self.p3 - self.p4), "(12, -3)")
 
     def test_mul(self):
-        self.assertEqual(self.p1 * self.p1, "(1, 4)")
-        self.assertEqual(self.p2 * self.p1, "(2, 6)")
-        self.assertEqual(self.p3 * self.p4, "(0, 0)")
+        self.assertEqual(str(self.p1 * self.p1), "(1, 4)")
+        self.assertEqual(str(self.p2 * self.p1), "(2, 6)")
+        self.assertEqual(str(self.p3 * self.p4), "(0, 0)")
 
     def test_cross(self):
         self.assertEqual(self.p1.cross(self.p2), -1)

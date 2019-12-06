@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: iso-8859-2 -*-
 
-##created by: Wojciech £adyga
+##created by: Wojciech ï¿½adyga
 
 import builtins
 import string
@@ -15,8 +15,8 @@ print(dir(__builtins__))
 print("\n2.10")
 line = "Mamy napis \nwielowierszowy line \n\n4fun "
 print(line)
-#dzielimy linie - split() i liczymy d³ - len()
-print("Ilosc wyrazów w napisie: ",len(line.split()))
+#dzielimy linie - split() i liczymy dï¿½ - len()
+print("Ilosc wyrazï¿½w w napisie: ",len(line.split()))
 #wynik: 5
 
 #2.11
@@ -30,7 +30,7 @@ for i in range(0, len(slowo)):
 print(slowo, " -> ", wynik)
 #wynik: w_o_r_d
 
-#2 sposób
+#2 sposï¿½b
 list = [slowo[i] for i in range(0, len(slowo))]
 print(slowo, " -> ", '_'.join(list))
 #wynik: w_o_r_d
@@ -48,17 +48,20 @@ print("Pierwsze znaki: -> ", first)
 print("Ostatnie znaki -> ", last)
 #wynik: ysyen
 
+#szybciej
+"".join( x[0] for x i "aa bb cc".split())
+
 #2.13
 print("\n2.13")
 dlugosc = 0
 slowa = line.split()
 for i in slowa:
     dlugosc += len(i)
-print("D³ugo¶æ wyrazow w napisie -> ", dlugosc)
+print("Dï¿½ugoï¿½ï¿½ wyrazow w napisie -> ", dlugosc)
 #wynik: 31
 
-#2 sposób
-print("D³ugo¶æ wyrazow w napisie #2 ->", sum(1 for i in line if i.isspace()!= True))
+#2 sposï¿½b
+print("Dï¿½ugoï¿½ï¿½ wyrazow w napisie #2 ->", sum(1 for i in line if i.isspace()!= True))
 #wynik: 31
 
 #2.14
@@ -70,11 +73,11 @@ for i in slowa:
     if l > maxi:
         tmp = i
         maxi = len(i)
-print("Najd³u¿sze s³owo -> ", tmp, " ma dl -> ", maxi)
+print("Najdï¿½uï¿½sze sï¿½owo -> ", tmp, " ma dl -> ", maxi)
 #wynik: wielowierszowy, 14
 
-#2 sposób
-print("Najd³u¿sze s³owo -> ", max(slowa), " ma dl -> ", len(max(slowa)))
+#2 sposï¿½b
+print("Najdï¿½uï¿½sze sï¿½owo -> ", max(slowa), " ma dl -> ", len(max(slowa)))
 #wynik: wielowierszowy, 14
 
 #2.15
@@ -85,11 +88,11 @@ for i in range(len(L)):
     wynik += str(L[i])
 print(wynik)
 
-#2 sposób
+#2 sposï¿½b
 print(''.join(map(str, L))) #z konwersj int to string
 #wynik: 7654321
 
-#3 - je¶li chcemy aby by³y posortowane i odzielone przecinkiem
+#3 - jeï¿½li chcemy aby byï¿½y posortowane i odzielone przecinkiem
 K = L.sort()
 print(', '.join(map(str, L)))
 #wynik: 1, 2, 3, 4, 5, 6, 7
@@ -109,7 +112,7 @@ listaSplit = line.split()
 print(sorted(listaSplit))
 #wynik: ['a', 'c,', 'inny', 'java,', 'jest', 'jezyk', 'ktory', 'lepszy', 'moze', 'programowania,', 'python,']
 
-#po d³ugo¶ci
+#po dï¿½ugoï¿½ci
 print(sorted(listaSplit, key=len))
 #wynik: ['a', 'c,', 'moze', 'inny', 'jest', 'java,', 'jezyk', 'ktory', 'lepszy', 'python,', 'programowania,']
 
@@ -121,14 +124,16 @@ counter = 0
 for i in range(len(newLiczba)):
     if newLiczba[i] == "0":
         counter += 1
-print("Ilo¶æ powtarzaj±cych siê 0 to -> ", counter)
+print("Iloï¿½ï¿½ powtarzajï¿½cych siï¿½ 0 to -> ", counter)
 #wynik: 13
+#inaczej
+#str(liczba).count('0')
 
 #2.19
 print("\n2.19")
 L = [12, 123, 32, 23, 234, 45, 6, 67, 8, 125, 176]
 LStr = []
 for i in range(len(L)):
-    LStr.append(str(L[i]).zfill(3)) #dope³nienie ka¿dego el do 3
+    LStr.append(str(L[i]).zfill(3)) #dopeï¿½nienie kaï¿½dego el do 3
 print(LStr)
 #wynik: ['012', '123', '032', '023', '234', '045', '006', '067', '008', '125', '176']
